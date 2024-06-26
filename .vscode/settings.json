@@ -1,0 +1,30 @@
+{
+  "dart.lineLength": 120,
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.sdkPath": ".fvm/flutter_sdk/bin",
+  "cSpell.words": [
+    "Asms",
+    "autofocus",
+    "buildheader",
+    "chek",
+    "Fullscreen",
+    "Gamification",
+    "tailwind",
+    "lerp",
+    "LTRB",
+    "LTWH",
+    "melvspace",
+    "microtask",
+    "practic",
+    "Rebuffer",
+    "Reclip",
+    "Refreshable",
+    "RGBO",
+    "rxdart",
+    "selectedtoggles",
+    "shadcn",
+    "SHORTWEEKDAYS",
+    "Superdiploma",
+    "unfocus"
+  ]
+}

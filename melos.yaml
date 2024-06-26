@@ -1,0 +1,33 @@
+name: tailwind_workspace
+sdkPath: .fvm/flutter_sdk
+packages:
+  - apps/*
+  - packages/*
+
+scripts:
+  bootstrap:clean:
+    run: melos clean; melos bs 
+    description: Clean and Bootstrap all packages.
+
+  install: |
+    melos exec --scope=tailwind_generator -- dart pub global activate -s path .
+
+  generate:
+    run: |
+      melos generate:code
+    description: Generate everything
+
+  generate:code:
+    run: melos exec --order-dependents --depends-on="build_runner" \ "flutter pub run build_runner build --delete-conflicting-outputs"
+    description: Run build runner build with order dependents
+
+  generate:theme:
+    run: melos exec --scope=sandbox -- dart run tailwind_generator
+
+  test:flutter:
+    run: melos exec --dir-exists="test" -c 1 --fail-fast -- "flutter test"
+    description: Run Flutter tests for all flutter packages
+
+  clean:deep:
+    run: git clean -x -d -f -q
+    description: Clean things very deeply, can be used to establish "pristine checkout" status.

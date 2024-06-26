@@ -1,0 +1,8 @@
+name: tailwind_workspace
+publish_to: "none"
+
+environment:
+  sdk: ">=3.4.1 <4.0.0"
+
+dev_dependencies:
+  melos: ^6.0.0

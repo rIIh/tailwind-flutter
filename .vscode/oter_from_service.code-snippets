@@ -1,0 +1,54 @@
+{
+	// Place your mobileApp workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	"AFI.module": {
+		"scope": "dart, flutter",
+		"prefix": "module",
+		"body": [
+			"import 'package:injectable/injectable.dart';",
+			"import 'package:introvert/common/client/api_client_v2.dart';",
+			"",
+			"@module",
+			"abstract class ${1:ServiceName}Module {",
+			"  @lazySingleton",
+			"  ${1:ServiceName}Repository repository(",
+			"    ApiClientV2 client,",
+			"    ${1:ServiceName}Converter converter,",
+			"  ) =>",
+			"    Fake${1:ServiceName}Repository(",
+			"      client: client,",
+			"      converter: converter,",
+			"      );",
+			"}"
+		],
+		"description": "Snippets module from project AFI"
+	},
+	"AFI.converter": {
+		"scope": "dart, flutter",
+		"prefix": "converter",
+		"body": [
+			"import 'package:injectable/injectable.dart';",
+			"import 'package:introvert/features/base/dto_converter.dart';",
+			"import 'package:introvert/features/core/pagination/data/converter/pagination_v3_converter.dart';",
+			"",
+			"typedef ${1:ServiceName}DataConverter = DtoConverter<${1:ServiceName}DataEntity, ${1:ServiceName}ResponseDto>;",
+			"",
+			"@Injectable(as: ${1:ServiceName}DataConverter)",
+			"final class ${1:ServiceName}DataConverterImpl extends ${1:ServiceName}DataConverter {",
+			"  final PaginationV3Converter paginationV3Converter;",
+			"  ${1:ServiceName}DataConverterImpl(this.paginationV3Converter);",
+			"",
+			"  @override",
+			"  ${1:ServiceName}DataEntity convert(${1:ServiceName}ResponseDto dto) {",
+			"    return ${1:ServiceName}DataEntity();",
+			"  }",
+			"}"
+		],
+		"description": "Snippets converter from project AFI"
+	},
+}

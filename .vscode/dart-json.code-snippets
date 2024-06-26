@@ -1,0 +1,29 @@
+{
+    "Json Builders": {
+      "prefix": "json",
+      "scope": "dart, flutter",
+      "description": "Link JSON builders",
+      "body": [
+        "factory ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.fromJson(Map<String, dynamic> json) => _$${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}FromJson(json);",
+        "",
+        "Map<String, dynamic> toJson() => _$${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}ToJson(this);",
+      ]
+    },
+    "Json Builder - fromJson Factory": {
+      "prefix": "jsonfrom",
+      "scope": "dart, flutter",
+      "description": "Link fromJSON factory",
+      "body": [
+        "factory ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.fromJson(Map<String, dynamic> json) => _$${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}FromJson(json);"
+      ],
+    },
+    "Json Builder - toJson Builder": {
+      "prefix": "jsonto",
+      "scope": "dart, flutter",
+      "description": "Link toJson builder",
+      "body": [
+        "Map<String, dynamic> toJson() => _$${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}ToJson(this);",
+      ],
+    }
+  }
+  

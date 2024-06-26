@@ -1,0 +1,18 @@
+{
+    "Widgetbook Story": {
+      "prefix": "stry",
+      "description": "Creates a new Widgetbook Story",
+      "body": [
+        "import 'package:flutter/widgets.dart';",
+        "import 'package:widgetbook/widgetbook.dart';",
+        "",
+        "part '$TM_FILENAME_BASE.book.dart';",
+        "",
+        "",
+        "final meta = Meta<${1:Widget}>();",
+        "",
+        "final $${2:Default} = ${1:Widget}Story($0);"
+      ]
+    }
+  }
+  

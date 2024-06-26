@@ -1,0 +1,46 @@
+{
+	"AFI.modelsDto": {
+		"scope": "dart, flutter",
+		"prefix": "modelsDto",
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part 'serviceName_dto.freezed.dart';",
+			"part 'serviceName_dto.g.dart';",
+			"",
+			"@freezed",
+			" class ${1:ServiceName}Dto with _$${1:ServiceName}Dto {",
+			"   const factory ${1:ServiceName}Dto({",
+			"    required String id,",
+			"  }) = _${1:ServiceName}DtoValue;",
+			"",
+			"factory ${1:ServiceName}Dto.fromJson(Map<String, dynamic> json) => _$${1:ServiceName}DtoFromJson(json);",
+			"}",
+		],
+		"description": "Snippets dto model from project AFI",
+	},
+
+	"AFI.modelsEntity": {
+		"scope": "dart, flutter",
+		"prefix": "modelsEntity",
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"import 'package:introvert/features/core/pagination/domain/entity/page_info.dart';",
+			"",
+			"part 'serviceName_data_entity.freezed.dart';",
+			"",
+			"@freezed",
+			"class ${1:ServiceName}DataEntity with _$${1:ServiceName}DataEntity {",
+			"  const factory ${1:ServiceName}DataEntity({",
+			"    required List<${1:ServiceName}ItemEntity> feedbacks,",
+			"    required PageInfo paginationInfo,",
+			"  }) = ${1:ServiceName}DataEntityValue;",
+			"}"
+		],
+		"description": "Snippets entity model from project AFI",
+	},
+
+
+
+
+}

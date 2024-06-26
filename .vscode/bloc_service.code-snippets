@@ -1,0 +1,80 @@
+{
+	"AFI.bloc": {
+		"scope": "dart, flutter",
+		"prefix": "bloc",
+		"body": [
+			"import 'dart:ui';",
+			"import 'package:flutter_bloc/flutter_bloc.dart';",
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"import 'package:get_it/get_it.dart';",
+			"import 'package:introvert/features/profile/domain/repository/profile_repository.dart';",
+			"import 'package:introvert/utility/completer.dart';",
+			"",
+			"part '${2:ServiceNamePath}_event.dart';",
+			"part '${2:ServiceNamePath}_state.dart';",
+			"part '${2:ServiceNamePath}_bloc.freezed.dart';",
+			"",
+			"class ${1:ServiceName}Bloc extends Bloc<${1:ServiceName}Event, ${1:ServiceName}State> {",
+			"  final ${1:ServiceName}Repository _serviceNameRepository;",
+			"",
+			"  ${1:ServiceName}Bloc({",
+			"  ${1:ServiceName}Repository? serviceNameRepository,",
+			"  ProfileRepository? profileRepository,",
+			"})  : _serviceNameRepository = serviceName ?? GetIt.I(),",
+			"      super(${1:ServiceName}State.loading()) {",
+			"  on<_Fetch>(_handleFetchEvent);",
+			"  on<_Reload>(_handleReloadEvent);",
+			"  on<_GetMore>(_handleGetMoreEvent);",
+			"}",
+			"",
+			"Future<void> fetch() async {",
+			"    return withCompleter(",
+			"    (resolve, reject) => add(${1:ServiceName}Event.fetch(onCompleted: resolve)),",
+			"  );",
+			"  }",
+			"",
+			"  Future<void> _handleFetchEvent(_Fetch event, Emitter<${1:ServiceName}State> emit) async {}",
+			"",
+			"  Future<void> _handleReloadEvent(_Reload event, Emitter<${1:ServiceName}State> emit) async {}",
+			"",
+			"  Future<void> _handleGetMoreEvent(_GetMore event, Emitter<${1:ServiceName}State> emit) async {}",
+			"}",
+		],
+		"description": "Snippets bloc from project AFI"
+	},
+	"AFI - Bloc - Parts": {
+		"scope": "dart",
+		"prefix": "parts",
+		"body": [
+			"part '${1:service_name}_event.dart';",
+			"part '${1:service_name}_state.dart';",
+			"part '${1:service_name}_bloc.freezed.dart';"
+		]
+	},
+	"AFI.event": {
+		"scope": "dart, flutter",
+		"prefix": "event",
+		"body": [
+			"part of '${1/([A-Z][a-z]+$)|([A-Z][a-z]+)/${1:/downcase}${2:/downcase}${2:+_}/g}_bloc.dart';",
+			"",
+			"@freezed",
+			"class ${1:ServiceName}Event with _$${1:ServiceName}Event {",
+			"\tconst factory ${1:ServiceName}Event.${2:fetch}({VoidCallback? onCompleted}) = _${2/^(.)(.*)$/${1:/upcase}${2}/};$0",
+			"}"
+		],
+		"description": "Snippets event from project AFI"
+	},
+	"AFI.state": {
+		"scope": "dart, flutter",
+		"prefix": "state",
+		"body": [
+			"part of '${1/([A-Z][a-z]+$)|([A-Z][a-z]+)/${1:/downcase}${2:/downcase}${2:+_}/g}_bloc.dart';",
+			"",
+			"@freezed",
+			"class ${1:ServiceName}State with _$${1:ServiceName}State {",
+			"\tconst factory ${1:ServiceName}State.state() = _${1:ServiceName}State;",
+			"}"
+		],
+		"description": "Snippets state from project AFI"
+	},
+}
